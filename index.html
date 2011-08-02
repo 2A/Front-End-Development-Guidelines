@@ -42,14 +42,8 @@
 			<h2>What's Up, DOCTYPE?</h2>
 			
 			<p>
-				The absence of a DOCTYPE is a crime punishable by death. You may have relied on the following DOCTYPE in the past, but it's important to know that this is now being superseded by a leaner and meaner snippet.
+				The absence of a DOCTYPE is a crime punishable by death.
 			</p>
-			
-			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
-				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-					"http://w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-			]]></script>
-			
 			<p>
 				Ideally, the HTML5 DOCTYPE should be used. It's supported in all modern browsers, and throws IE6 and IE7 into standards mode. <a href="http://ejohn.org/blog/html5-doctype/" target="_blank">Source</a>.
 			</p>
@@ -57,6 +51,12 @@
 			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
 				<!DOCTYPE html>
 			]]></script>
+			
+			<p>If the project can't use HTML5, go with XHTML 1.0 Strict:</p>
+			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
+				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+			</script>
+			
 			
 		</div>
 		
@@ -969,27 +969,39 @@
 			
 			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
 				/* BAD */
-				.selector {display:none;background:#ff0000;color:#000000;} 
+				.selector {display:none;background:#ff0000;color:#000;} 
 				
 				/* GOOD - SINGLE LINE */
-				.selector { display: none; background: #ff0000; color: #000000; } 
+				.selector {display: none; background: #ff0000; color: #000;} 
 				
 				/* GOOD - MULTI-LINE */
 				.selector {
 					display: none;
 					background: #ff0000;
-					color: #000000;
-				} 
+					color: #000;
+					} 
 			]]></script>
 			
-			<h3>Same Line Braces</h3>
+			<h3>Brackets</h3>
 			
 			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+				/* Like this: */
 				.selector {
 					display: none;
 					background: #ff0000;
-					color: #000000;
+					color: #000;
+					}
+				
+				/* NOT Like this: */
+				.selector {
+					display: none;
+					background: #ff0000;
+					color: #000;
 				}
+				/* Use a single line for single attributes: */
+				.selector {display: none;}
+
+				
 			]]></script>
 			
 			<h3>Indenting Child Elements</h3>
@@ -999,7 +1011,7 @@
 			</p>
 			
 			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				.selector { display: none; background: #ff0000; color: #000000; }
+				.selector { display: none; background: #ff0000; color: #000; }
 					.selector a { text-decoration: none; }
 					.selector span { font-weight: bold; }
 			]]></script>
@@ -1094,57 +1106,7 @@
 			]]></script>
 			
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssClearingFloats" class="entry">
-			<h2>Clearing Floats</h2>
-			
-			<p>
-				Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element (it doesn't work if it is "auto") and an overflow value of either auto or hidden. 
-				"Hidden" obviously degrades better, but there are some IE compatibility versions where auto works better.
-			</p>
-			
-			<h3>The HTML:</h3>
-			
-			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
-				
-				<div class="parentElement">
-					<div class="childElement">
-						I'm floated left!
-					</div>
-					I'm normal text that wraps around the float
-				</div>
-				
-			]]></script>
-			
-			<h3>The CSS:</h3>
-			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				.parentElement {
-					width: 100%;
-					overflow: hidden;
-				}
-				.childElement {
-					float: left;
-				}
-			]]></script>
-			
-			<p>
-				Contributors have also brough the latest clearfix to my attention. The <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">micro clear-fix</a>
-				is considered stable and cross browser compliant enough to make it to the latest HTML5 boiler plate release. I <strong>highly</strong> recommend you check it out. 
-				Although I am not a massive fan of browser-specific CSS and pseudo elements such as <code>:after</code>, the micro clearfix is definitely more robust. 
-				It also prevents top margins from collapsing which is an absolute life saver.
-			</p>
-			
-		</div>
+
 		
 		
 		
