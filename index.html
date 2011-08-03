@@ -34,7 +34,7 @@
 
 	<div id="mainContainer">
 
-		<h2 id="accessiblitySection">Accessibility</h2>
+		<h2 id="accessiblitySection">HTML</h2>
 		
 		
 		
@@ -45,14 +45,14 @@
 				The absence of a DOCTYPE is a crime punishable by death.
 			</p>
 			<p>
-				Ideally, the HTML5 DOCTYPE should be used. It's supported in all modern browsers, and throws IE6 and IE7 into standards mode. <a href="http://ejohn.org/blog/html5-doctype/" target="_blank">Source</a>.
+				Use the HTML5 DOCTYPE. It's supported in all modern browsers, and throws IE6 and IE7 into standards mode. <a href="http://ejohn.org/blog/html5-doctype/" target="_blank">Source</a>.
 			</p>
 			
 			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
 				<!DOCTYPE html>
 			]]></script>
 			
-			<p>If the project can't use HTML5, go with XHTML 1.0 Strict:</p>
+			<p>If the project can't use HTML5, use XHTML 1.0 Strict:</p>
 			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
 				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
 			</script>
@@ -68,15 +68,21 @@
 			<h3>Write Valid Semantic Markup</h3>
 			
 			<p>
-				Writing websites with clean, semantic HTML is something we wish we could always do. Sometimes we find ourselves limited by the way pages were setup by our predecessors, or sometimes we're coding an HTML email. The validity of the HTML should never be compromised, even if to solve a browser specific bug.
+				Writing websites with clean, semantic HTML is something we wish we could always do. Sometimes we find ourselves limited by the way pages were setup by our predecessors, or sometimes we're coding an HTML email. The <strong>validity of the HTML should never be compromised</strong>, even if to solve a browser specific bug. <a href="http://validator.w3.org/">Validate your HTML</a> early and often.
 			</p>
-			
+
+			<p>You may only have a single <code>&lt;h1&gt;</code> per page. Reserve it for the logo, and use it as a link to the homepage, with image replaced text.</p>
 			<p>
-				Headings should be heirarchically created from <code>&lt;h2&gt;</code> onwards, paragraphs should always be in <code>&lt;p&gt;</code> tags and so on and so forth. If you write semantic HTML, the resultant page will be cleaner, lighter and easily parsed by search engine spiders. This is one of the simplest SEO fixes you can undertake.
+				Headings should be hierarchically created from <code>&lt;h2&gt;</code> onwards, paragraphs should always be in <code>&lt;p&gt;</code> tags and so on and so forth. If you write semantic HTML, the resultant page will be cleaner, lighter and easily parsed by search engine spiders. This is one of the simplest SEO fixes you can undertake.
 			</p>
 			
-			<h4>Which do you think looks cleaner, this?:</h4>
+			<h4>Use this:</h4>
+			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
+				<h2>A Heading</h2>
+				<p>Lorem ipsum dolor sit amet. ...</p>
+			]]></script>
 			
+			<h4>NOT this:</h4>
 			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
 				<span class="sectionHeading">A Heading</span>
 				<br /> <br />
@@ -84,12 +90,6 @@
 				<br /> <br />
 			]]></script>
 			
-			<h4>Or this?</h4>
-			
-			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
-				<h2>A Heading</h2>
-				<p>Lorem ipsum dolor sit amet. ...</p>
-			]]></script>
 		</div>
 		
 		
@@ -154,11 +154,11 @@
 			<h3>Use Tables for Tabular Data Only</h3>
 			
 			<p>
-				Tables should only ever be used for the presentation of tabular data. The only exception is when composing HTML email, in which a table is almost the only thing supported by soul crushing email clients.
+				Tables should only be used for the presentation of tabular data. The only exception is when composing HTML email, in which a table is almost the only thing supported by soul crushing email clients.
 			</p>
 			<p>
-				For accessibility, table headers should always be presented using <code>&lt;th&gt;</code> elements. In .NET datagrids, this can be enabled by setting <code>showAccessibleHeader</code> to true. 
-				Remember to also set <code>cellpadding</code>, <code>cellspacing</code> and <code>border</code> values to <code>0</code> as these are more consistently controlled by CSS.
+				For accessibility, table headers should always be presented using <code>&lt;th&gt;</code> elements. 
+				Set <code>cellpadding</code>, <code>cellspacing</code> and <code>border</code> values to <code>0</code> as these are more consistently controlled by CSS.
 			</p>
 			
 			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
@@ -180,20 +180,355 @@
 				</table>
 			]]></script>
 			
+			<p>If the data is tabular, use a <code>&lt;table&gt;</code>. <a href="http://csswizardry.com/quick-tips/#tip-25">Do not reinvent the wheel</a>.</p>
 		</div>
 		
+	
+	
+		<h2 id="cssSection">CSS</h2>
 		
 		
 		
 		
-		<div id="accessibilityJqueryWidgets" class="entry">
-			<h3>Use jQuery &amp; jQuery UI Widgets</h3>
+		
+		
+		
+		<div id="cssWhitespacing" class="entry">
+			<h3>Whitespacing</h3>
+			
+			<p>Only use single-line CSS when you have a single attribute.</p>
+			
+			<h4>Proper Spacing and Bracketing</h4>
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+				/* GOOD */
+				.selector {
+					display: none;
+					background: #ff0000;
+					color: #000;
+					} 
+
+				/* BAD */
+				.selector {
+					display:none;
+					background:#ff0000;
+					color:#000;
+				}
+				
+				/* BAD */
+				.selector {display:none; background:#ff0000;color:#000;}
+
+				/* GOOD - Use a single line for single attributes: */
+				.selector {display: none;}
+			]]></script>
+			
+			<h4>Indenting Child Elements</h4>
 			
 			<p>
-				jQuery and jQuery UI are constructed to look and behave as close to identical as possible on different browsers. 
-				jQuery UI is designed to be WAI WCAG 2.0 and WAI ARIA compliant, so using the framework removes any uncertainty about plugins or scripts running on your site.
+				Purely optional, use when it adds legibility.
 			</p>
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+				.selector {
+					display: none;
+					background: #ff0000;
+					color: #000;
+					}
+					.selector a {text-decoration: none;}
+					.selector span {font-weight: bold;}
+			]]></script>
+			
+			<h4>Use Proper Vendor Prefixes</h4>
+			<p>Always end with the non-vendor specific declaration. Use ALL prefixes where applicable.</p>
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+				.selector { 
+					-webkit-border-radius: 4px;
+					-moz-border-radius: 4px;
+					-o-border-radius: 4px;
+					border-radius: 4px; 
+					}
+			]]></script>
+			
 		</div>
+		
+		
+		
+		
+		
+		
+		
+		<div id="cssShorthand" class="entry">
+			<h3>CSS Shorthand</h3>
+			
+			<h4>Grouping Properties</h4>
+			
+			<p>
+				Grouping properties together is one of the single most effective methods to greatly reduce the size of a CSS file. It's important to understand how properties are ordered (clockwise - top, right, bottom, left) 
+				and how they can be further shortened (top and bottom, left and right).
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+					/* LONG CODE IS LONG */
+					padding-top: 1px;
+					padding-right: 2px;
+					padding-bottom: 1px;
+					padding-left: 2px;
+					
+					/* BETTER */
+					padding: 1px 2px 1px 2px;
+					
+					/* BEST */
+					padding: 1px 2px;
+			]]></script>
+			
+			<h4>From 0px to Hero</h4>
+			
+			<p>
+				Assigning a unit type to a property value of zero is redundant. It is not important to know whether an element should be <code>0px</code> from the left or <code>0 elephants</code> from the left, just that it's bang on the left.
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+					/* BAD */
+					padding: 0px 10px;
+			]]></script>
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+					/* GOOD */
+					padding: 0 10px;
+			]]></script>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<div id="cssCommenting" class="entry">
+			<h3>Commenting Blocks</h3>
+			
+			<p>
+				Commenting large blocks of CSS is a great way of keeping track of multiple style areas within the one stylesheet. 
+				Obviously it works better with single line CSS styles, but the effect is not entirely lost on multi-line either.
+				The use of dashes versus equals versus underscores are all up the individual, but this is how I like to manage my stylesheets.
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+					/* === HORIZONTAL NAV === */
+					#horizNav { width: 100%; display: block; }
+					#horizNav li { display: block; float: left; position: relative; }
+					#horizNav li a { display: block; height: 30px; text-decoration: none; }
+					#horizNav li ul { display: none; position: absolute; top: 30; left: 0; }
+					
+					/* === HOME PAGE - CAROUSEL === */
+					#carousel { width: 960px; height: 150px; position: relative; }
+					#carousel img { display: none; }
+					#carousel .buttons { position: absolute; right: 10px; bottom: 10px; }
+			]]></script>
+			
+		</div>
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div id="cssClearingFloats" class="entry">
+			<h3>Clearing Floats</h3>
+			
+			<p>
+				Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element (it doesn't work if it is "auto") and an overflow value of either auto or hidden. 
+				"Hidden" obviously degrades better, but there are some IE compatibility versions where auto works better.
+			</p>
+			
+			<h4>The HTML:</h4>
+			
+			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
+				
+				<div class="parentElement">
+					<div class="childElement">
+						I'm floated left!
+					</div>
+					I'm normal text that wraps around the float
+				</div>
+				
+			]]></script>
+			
+			<h4>The CSS:</h4>
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+				.parentElement {
+					width: 100%;
+					overflow: hidden;
+				}
+				.childElement {
+					float: left;
+				}
+			]]></script>
+			
+			<p>
+				Contributors have also brough the latest clearfix to my attention. The <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">micro clear-fix</a>
+				is considered stable and cross browser compliant enough to make it to the latest HTML5 boiler plate release. I <strong>highly</strong> recommend you check it out. 
+				Although I am not a massive fan of browser-specific CSS and pseudo elements such as <code>:after</code>, the micro clearfix is definitely more robust. 
+				It also prevents top margins from collapsing which is an absolute life saver.
+			</p>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div id="cssCentering" class="entry">
+			<h3>Vertical &amp; Horizontal Centering</h3>
+			
+			<p>
+				Centering elements horizontally is not exactly rocket science, and I'm sure most of you are familiar with the following snippet:
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+				.class {
+					width: 960px;
+					margin: 0 auto;
+				}
+			]]></script>
+			
+			<p>
+				Front end devs have been using this snippet for a long time, without fully understanding why it didn't work vertically. From my understanding, it's important to remember that the parent element will generally have a <code>height: auto;</code> on it, and that there is no 100% height in which to vertically center the element. Applying the <code>position: absolute;</code> effectively moves the element out into position mode and responds to the pushing and pulling of auto margins and no specific location. 
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+				.exactMiddle {
+					width: 100px;
+					height: 100px;
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					margin: auto;
+				}
+			]]></script>
+			
+			<p>
+				The downsides of this method include its lack of support in IE6 and IE7, and the absence of a scroll bar if the browser is resized to be smaller than the centered object. There are more methods on <a href="http://blog.themeforest.net/tutorials/vertical-centering-with-css/" target="_blank">this page</a> (this is Method 4), but this is by far the best.
+			</p> 
+			
+			<p>
+				The vertical centering of text in an element is also straightforward. If the text is on a single line, like a horizontal navigation item, you can set the <code>line-height</code> to be that of the element's physical height.
+			</p> 
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+				#horizNav li {
+					height: 32px;
+					line-height: 32px;
+				}
+			]]></script>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<div id="cssFeatureSniff" class="entry">
+			<h3>Feature Sniff, Don't Browser Sniff</h3>
+			
+			<p>
+				In the earlier discusison of JavaScript feature detection, applying properties if a browser is <em>any version</em> of IE is increasingly problematic.
+				Man-of-steel Paul Irish pioneered the use of  <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/" target="_blank">IE version sniffing</a> to address this problem, but <a href="http://www.modernizr.com" target="_blank">Modernizr</a> has since come to the rescue.
+				Modernizr places classes on the root <code>&lt;html&gt;</code> element specifying whether features are supported. Bleeding edge styles can then easily cascade from (or be removed from) these classes.
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+				.my_elem {
+				   border: 1px inset #666;
+				}
+				
+				.borderimage .my_elem {
+				   border: none;
+				   -webkit-border-image: url(fancy-border.png) 5 5 5 5 round;
+				   -moz-border-image: url(fancy-border.png) 5 5 5 5 round;
+				   border-image: url(fancy-border.png) 5 5 5 5 round;
+				}
+			]]></script>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<div id="cssImportant" class="entry">
+			<h3>You're Not !important</h3>
+			
+			<p>
+				A reliance upon the <code>!important</code> tag is a dangerous thing. The cases that warrant its use are rare and specific. They revolve around the necessity to override another stylesheet which you do not have access or permission to edit.
+				Another scenario is hard coding an element's styles to prevent inline JavaScript styles from taking precedence. Instead <code>!important</code> is used as a lazy shortcut to set the priority of your style over another, causing headaches further down the line.
+			</p>
+			
+			<p>
+				The use of the <code>!important</code> tag can be mostly avoided via the better understanding of CSS selector precedence, and how to better target elements. The more specific the selector, the more likely it will be accepted as the applicable style.
+				The following example from vanseodesign demonstrates the specificity at work.
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+				p { font-size: 12px; }
+				p.bio { font-size: 14px; }
+			]]></script>
+			
+			<p>
+				<a href="http://www.vanseodesign.com/css/css-specificity-inheritance-cascaade/" target="_blank">Their article</a> on style precedence does a better job explaining inheritence than I ever could, so please give it a go.
+			</p>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<div id="cssDegradation" class="entry">
+			<h3>Aggressive Degradation</h3>
+			
+			<p>
+				It's worth noting that this is a personal opinion, and best suited to very specific situations. The stance of aggressive degradation will not be well received in large commercial projects or enterprise solutions relying upon older browsers.
+			</p>
+			
+			<p>
+				Aggressive degradation dictates that if a particular (older) browser cannot render a certain effect, it should simply be omitted. A CSS3 button is a good example. 
+				Effects such as <code>border-radius</code>, <code>box-shadow</code>, <code>text-shadow</code> and <code>gradients</code> will be displayed in cutting edge browsers.
+				A graceful fallback of a <code>.PNG</code> would be provided for slightly older browsers, and the most graceful of all solutions would include a PNG-Fix for IE6 or the use of <code>filter</code> arguments to replicate gradients and shadows.
+				However, aggressive degradation in this situation instructs you to neglect the older browsers and present them with a flat, satisfactory object.
+			</p>
+			
+			<p>
+				Put simply, aggressive degradation boils down to: <strong>if your browser can't render a gradient or a box shadow, tough luck</strong>.
+			</p>
+			
+			<p>
+				While not ideal for every situation, it ensures the timely delivery of projects and that the root product is still usable and not reliant on (validation breaking) hacks.
+			</p>
+			
+		</div>
+		
+		
 		
 		
 		
@@ -203,7 +538,88 @@
 		
 		
 
+		<h2 id="cssHtmlSection">CSS3 &amp; HTML5</h2>
+		
+		
+		
+		
+		
+		
+		
+		<div id="cssHtmlFeatureSniff" class="entry">
+			<h3>Feature Sniff with Modernizr</h3>
+			
+			<p>
+				I think I've gone on enough about this already. Use <a href="http://www.modernizr.com" target="_blank">Modernizr</a> to detect the availability of specific HTML5 and CSS3 features.
+			</p>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<div id="cssHtmlFontFace" class="entry">
+			<h3>@font-face Use and Abuse</h3>
+			
+			<p>
+				Before you consider embedding a custom font, is important that you inspect the <abbr>EULA</abbr> and check if web embedding is allowed. Foundries are understandably reluctant to allow designers and developers
+				the ability to place font files directly on a server which can then be copied by a savvy end user. Particular foundries also prohibit the embedding of particular file types, such as <code>.TTF</code> and <code>.OTF</code>.
+			</p>
+			
+			<p>
+				If, after careful consideration, you believe the desired font is web embeddable: head on over to the Font Squirrel <a href="http://www.fontsquirrel.com/fontface/generator" target="_blank">@font-face Generator</a>. 
+				It utilises Fontspring's <a href="http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax" target="_blank">bulletproof @font-face structure</a> and automatically generates all the required file formats.
+			</p>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<div id="cssHtmlDegradation" class="entry">
+			<h3>Degradation</h3>
+			
+			<p>
+				Thankfully browser handling of unsupported HTML5 and CSS3 is already that of a graceful nature. New additions to the list of <code>&lt;input /&gt;</code> types such as "email", "search" etc. will generally
+				degrade to normal <code>&lt;input type="text" /&gt;</code> when not natively supported. Similarly, CSS3 properties that aren't supported will simply not appear. Responsive layouts controlled by height and width
+				media queries are simply not applied. 
+			</p>
+			
+			<p>
+				<strong>
+					Subtle CSS3 effects should be employed as a reward for users who run a modern browser.
+				</strong>
+			</p>
+			
+			<p>
+				The resources section below includes a few libraries to help normalise HTML5 and CSS3 functionality across a range of older browsers.
+			</p>
+			
+		</div>
+		
+		
+		
+
+
+
+
 		<h2 id="javascriptSection">JavaScript</h2>
+		
+
+		<div id="accessibilityJqueryWidgets" class="entry">
+			<h3>Use jQuery &amp; jQuery UI Widgets</h3>
+			
+			<p>
+				jQuery and jQuery UI are constructed to look and behave as close to identical as possible on different browsers. 
+				jQuery UI is designed to be WAI WCAG 2.0 and WAI ARIA compliant, so using the framework removes any uncertainty about plugins or scripts running on your site.
+			</p>
+		</div>
 		
 		
 		
@@ -929,444 +1345,7 @@
 			</p>
 			
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-
-		<h2 id="cssSection">CSS</h2>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssWhitespacing" class="entry">
-			<h3>Whitespacing</h3>
 			
-			<p>
-				Whitespacing of CSS can be difficult as we chop and change between single and multi line CSS arguments. I'm not going to get into that.
-			</p>
-			
-			<h4>Proper Spacing and Bracketing</h4>
-			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				/* GOOD */
-				.selector {
-					display: none;
-					background: #ff0000;
-					color: #000;
-					} 
-
-				/* BAD */
-				.selector {
-					display:none;
-					background:#ff0000;
-					color:#000;
-				} 
-
-				/* GOOD - Use a single line for single attributes: */
-				.selector {display: none;}
-			]]></script>
-			
-			<h4>Indenting Child Elements</h4>
-			
-			<p>
-				Purely optional, use when it adds legibility.
-			</p>
-			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				.selector {
-					display: none;
-					background: #ff0000;
-					color: #000;
-					}
-					.selector a {text-decoration: none;}
-					.selector span {font-weight: bold;}
-			]]></script>
-			
-			<h4>Proper Vendor Prefixes</h4>
-			<p>Always end with the non-vendor specific declaration. Use ALL prefixes where applicable</p>
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				.selector { 
-					-webkit-border-radius: 4px;
-					-moz-border-radius: 4px;
-					-o-border-radius: 4px;
-					border-radius: 4px; 
-					}
-			]]></script>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssShorthand" class="entry">
-			<h3>CSS Shorthand</h3>
-			
-			<h4>Grouping Properties</h4>
-			
-			<p>
-				Grouping properties together is one of the single most effective methods to greatly reduce the size of a CSS file. It's important to understand how properties are ordered (clockwise - top, right, bottom, left) 
-				and how they can be further shortened (top and bottom, left and right).
-			</p>
-			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-					/* LONG CODE IS LONG */
-					padding-top: 1px;
-					padding-right: 2px;
-					padding-bottom: 1px;
-					padding-left: 2px;
-					
-					/* BETTER */
-					padding: 1px 2px 1px 2px;
-					
-					/* BEST */
-					padding: 1px 2px;
-			]]></script>
-			
-			<h4>From 0px to Hero</h4>
-			
-			<p>
-				Assigning a unit type to a property value of zero is redundant. It is not important to know whether an element should be <code>0px</code> from the left or <code>0 elephants</code> from the left, just that it's bang on the left.
-			</p>
-			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-					/* BAD */
-					padding: 0px 10px;
-			]]></script>
-			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-					/* GOOD */
-					padding: 0 10px;
-			]]></script>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssCommenting" class="entry">
-			<h3>Commenting Blocks</h3>
-			
-			<p>
-				Commenting large blocks of CSS is a great way of keeping track of multiple style areas within the one stylesheet. 
-				Obviously it works better with single line CSS styles, but the effect is not entirely lost on multi-line either.
-				The use of dashes versus equals versus underscores are all up the individual, but this is how I like to manage my stylesheets.
-			</p>
-			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-					/* === HORIZONTAL NAV === */
-					#horizNav { width: 100%; display: block; }
-					#horizNav li { display: block; float: left; position: relative; }
-					#horizNav li a { display: block; height: 30px; text-decoration: none; }
-					#horizNav li ul { display: none; position: absolute; top: 30; left: 0; }
-					
-					/* === HOME PAGE - CAROUSEL === */
-					#carousel { width: 960px; height: 150px; position: relative; }
-					#carousel img { display: none; }
-					#carousel .buttons { position: absolute; right: 10px; bottom: 10px; }
-			]]></script>
-			
-		</div>
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssClearingFloats" class="entry">
-			<h3>Clearing Floats</h3>
-			
-			<p>
-				Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element (it doesn't work if it is "auto") and an overflow value of either auto or hidden. 
-				"Hidden" obviously degrades better, but there are some IE compatibility versions where auto works better.
-			</p>
-			
-			<h4>The HTML:</h4>
-			
-			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
-				
-				<div class="parentElement">
-					<div class="childElement">
-						I'm floated left!
-					</div>
-					I'm normal text that wraps around the float
-				</div>
-				
-			]]></script>
-			
-			<h4>The CSS:</h4>
-			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				.parentElement {
-					width: 100%;
-					overflow: hidden;
-				}
-				.childElement {
-					float: left;
-				}
-			]]></script>
-			
-			<p>
-				Contributors have also brough the latest clearfix to my attention. The <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">micro clear-fix</a>
-				is considered stable and cross browser compliant enough to make it to the latest HTML5 boiler plate release. I <strong>highly</strong> recommend you check it out. 
-				Although I am not a massive fan of browser-specific CSS and pseudo elements such as <code>:after</code>, the micro clearfix is definitely more robust. 
-				It also prevents top margins from collapsing which is an absolute life saver.
-			</p>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssCentering" class="entry">
-			<h3>Vertical &amp; Horizontal Centering</h3>
-			
-			<p>
-				Centering elements horizontally is not exactly rocket science, and I'm sure most of you are familiar with the following snippet:
-			</p>
-			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				.class {
-					width: 960px;
-					margin: 0 auto;
-				}
-			]]></script>
-			
-			<p>
-				Front end devs have been using this snippet for a long time, without fully understanding why it didn't work vertically. From my understanding, it's important to remember that the parent element will generally have a <code>height: auto;</code> on it, and that there is no 100% height in which to vertically center the element. Applying the <code>position: absolute;</code> effectively moves the element out into position mode and responds to the pushing and pulling of auto margins and no specific location. 
-			</p>
-			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				.exactMiddle {
-					width: 100px;
-					height: 100px;
-					position: absolute;
-					top: 0;
-					right: 0;
-					bottom: 0;
-					left: 0;
-					margin: auto;
-				}
-			]]></script>
-			
-			<p>
-				The downsides of this method include its lack of support in IE6 and IE7, and the absence of a scroll bar if the browser is resized to be smaller than the centered object. There are more methods on <a href="http://blog.themeforest.net/tutorials/vertical-centering-with-css/" target="_blank">this page</a> (this is Method 4), but this is by far the best.
-			</p> 
-			
-			<p>
-				The vertical centering of text in an element is also straightforward. If the text is on a single line, like a horizontal navigation item, you can set the <code>line-height</code> to be that of the element's physical height.
-			</p> 
-			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				#horizNav li {
-					height: 32px;
-					line-height: 32px;
-				}
-			]]></script>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssFeatureSniff" class="entry">
-			<h3>Feature Sniff, Don't Browser Sniff</h3>
-			
-			<p>
-				In the earlier discusison of JavaScript feature detection, applying properties if a browser is <em>any version</em> of IE is increasingly problematic.
-				Man-of-steel Paul Irish pioneered the use of  <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/" target="_blank">IE version sniffing</a> to address this problem, but <a href="http://www.modernizr.com" target="_blank">Modernizr</a> has since come to the rescue.
-				Modernizr places classes on the root <code>&lt;html&gt;</code> element specifying whether features are supported. Bleeding edge styles can then easily cascade from (or be removed from) these classes.
-			</p>
-			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				.my_elem {
-				   border: 1px inset #666;
-				}
-				
-				.borderimage .my_elem {
-				   border: none;
-				   -webkit-border-image: url(fancy-border.png) 5 5 5 5 round;
-				   -moz-border-image: url(fancy-border.png) 5 5 5 5 round;
-				   border-image: url(fancy-border.png) 5 5 5 5 round;
-				}
-			]]></script>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssImportant" class="entry">
-			<h3>You're Not !important</h3>
-			
-			<p>
-				A reliance upon the <code>!important</code> tag is a dangerous thing. The cases that warrant its use are rare and specific. They revolve around the necessity to override another stylesheet which you do not have access or permission to edit.
-				Another scenario is hard coding an element's styles to prevent inline JavaScript styles from taking precedence. Instead <code>!important</code> is used as a lazy shortcut to set the priority of your style over another, causing headaches further down the line.
-			</p>
-			
-			<p>
-				The use of the <code>!important</code> tag can be mostly avoided via the better understanding of CSS selector precedence, and how to better target elements. The more specific the selector, the more likely it will be accepted as the applicable style.
-				The following example from vanseodesign demonstrates the specificity at work.
-			</p>
-			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				p { font-size: 12px; }
-				p.bio { font-size: 14px; }
-			]]></script>
-			
-			<p>
-				<a href="http://www.vanseodesign.com/css/css-specificity-inheritance-cascaade/" target="_blank">Their article</a> on style precedence does a better job explaining inheritence than I ever could, so please give it a go.
-			</p>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssDegradation" class="entry">
-			<h3>Aggressive Degradation</h3>
-			
-			<p>
-				It's worth noting that this is a personal opinion, and best suited to very specific situations. The stance of aggressive degradation will not be well received in large commercial projects or enterprise solutions relying upon older browsers.
-			</p>
-			
-			<p>
-				Aggressive degradation dictates that if a particular (older) browser cannot render a certain effect, it should simply be omitted. A CSS3 button is a good example. 
-				Effects such as <code>border-radius</code>, <code>box-shadow</code>, <code>text-shadow</code> and <code>gradients</code> will be displayed in cutting edge browsers.
-				A graceful fallback of a <code>.PNG</code> would be provided for slightly older browsers, and the most graceful of all solutions would include a PNG-Fix for IE6 or the use of <code>filter</code> arguments to replicate gradients and shadows.
-				However, aggressive degradation in this situation instructs you to neglect the older browsers and present them with a flat, satisfactory object.
-			</p>
-			
-			<p>
-				Put simply, aggressive degradation boils down to: <strong>if your browser can't render a gradient or a box shadow, tough luck</strong>.
-			</p>
-			
-			<p>
-				While not ideal for every situation, it ensures the timely delivery of projects and that the root product is still usable and not reliant on (validation breaking) hacks.
-			</p>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-		<h2 id="cssHtmlSection">CSS3 &amp; HTML5</h2>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssHtmlFeatureSniff" class="entry">
-			<h3>Feature Sniff with Modernizr</h3>
-			
-			<p>
-				I think I've gone on enough about this already. Use <a href="http://www.modernizr.com" target="_blank">Modernizr</a> to detect the availability of specific HTML5 and CSS3 features.
-			</p>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssHtmlFontFace" class="entry">
-			<h3>@font-face Use and Abuse</h3>
-			
-			<p>
-				Before you consider embedding a custom font, is important that you inspect the <abbr>EULA</abbr> and check if web embedding is allowed. Foundries are understandably reluctant to allow designers and developers
-				the ability to place font files directly on a server which can then be copied by a savvy end user. Particular foundries also prohibit the embedding of particular file types, such as <code>.TTF</code> and <code>.OTF</code>.
-			</p>
-			
-			<p>
-				If, after careful consideration, you believe the desired font is web embeddable: head on over to the Font Squirrel <a href="http://www.fontsquirrel.com/fontface/generator" target="_blank">@font-face Generator</a>. 
-				It utilises Fontspring's <a href="http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax" target="_blank">bulletproof @font-face structure</a> and automatically generates all the required file formats.
-			</p>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssHtmlDegradation" class="entry">
-			<h3>Degradation</h3>
-			
-			<p>
-				Thankfully browser handling of unsupported HTML5 and CSS3 is already that of a graceful nature. New additions to the list of <code>&lt;input /&gt;</code> types such as "email", "search" etc. will generally
-				degrade to normal <code>&lt;input type="text" /&gt;</code> when not natively supported. Similarly, CSS3 properties that aren't supported will simply not appear. Responsive layouts controlled by height and width
-				media queries are simply not applied. 
-			</p>
-			
-			<p>
-				<strong>
-					Subtle CSS3 effects should be employed as a reward for users who run a modern browser.
-				</strong>
-			</p>
-			
-			<p>
-				The resources section below includes a few libraries to help normalise HTML5 and CSS3 functionality across a range of older browsers.
-			</p>
-			
-		</div>
-		
-		
-				
 		
 		
 		
