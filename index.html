@@ -1178,6 +1178,44 @@
 		
 		
 		
+		<div id="javascriptCompression" class="entry">
+			<h3>The Javasript Lapband!</h3>
+			
+			<p>
+				Get your javascript ready for YUI / minify compressors. 
+				You can see the different compressors on your code along with a geeky
+				performance grid <a href="http://compressorrater.thruhere.net/" target="_blank">thruhere</a> (get it :D).
+				You really don't have to consider this unless you are an uber popular website guru.
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
+			$(function()
+			{
+				// Do a local definition so that the compressor munges them
+				var TRUE = true,
+					FALSE = false,
+					undefined = undefined,
+					NULL = null;
+			});
+			
+			// Compresses to something like
+			$(function(){var b=true,c=false,e=e,d=null;});
+			
+			// Use the cool way to define variables
+			var tester = 'one', jon = 'two';
+				
+				// NOT the prehistoric way
+				var tester = 'one';
+				var jon = 'two';
+			]]></script>
+			
+		</div>
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -1308,7 +1346,7 @@
 			<h4>Using Efficient Selectors</h4>
 			
 			<p>
-				So jQuery/sizzleJS can use CSS3 selectors like a boss, but what's the real cost? Behind the scenes the browser is hopefully using <code>document.querySelector()</code>, but there's also a fair chance it will be breaking down your selector string and querying the DOM manually.
+				So jQuery/sizzleJS can use CSS3 selectors like a boss, but what's the real cost? Behind the scenes the browser is hopefully using <code>document.querySelector()</code>, but there's also a fair chance it will be breaking down your selector string and querying the DOM manually.  Because jQuery uses sizzleJS, it reads from right->left in the selectors.
 			</p>
 			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
@@ -1317,8 +1355,18 @@
 				$("#quoteList").children(".quotes"); 
 				
 				// looks for the "foo" class only in the pre-defined bar element
-				$(".foo",bar); 
+				$(".foo", bar); 
+				
+				// if possible, try to use tag.class for your last selector
+				$('.data td.reyes').hover();
+				
+				// I am going to shoot you if you do this
+				$('#nav > *');
 			]]></script>
+			
+			<p>
+				You can also check out Paul Irish's <a href="http://paulirish.com/2009/perf/" target="_blank">jQuery Anti-Patterns for Performance</a> presentation.
+			</p>
 			
 		</div>
 		
