@@ -26,7 +26,7 @@
 
 		<div class="wrapper">
 		
-			<h1>Contents</h1>
+			<h2>Contents</h2>
 			
 		</div>
 		
@@ -34,12 +34,12 @@
 
 	<div id="mainContainer">
 
-		<h1 id="accessiblitySection">Accessibility</h1>
+		<h2 id="accessiblitySection">Accessibility</h2>
 		
 		
 		
 		<div id="accessibilityDoctype" class="entry">
-			<h2>What's Up, DOCTYPE?</h2>
+			<h3>DOCTYPE</h3>
 			
 			<p>
 				The absence of a DOCTYPE is a crime punishable by death.
@@ -65,17 +65,17 @@
 		
 		
 		<div id="accessibilitySemanticMarkup" class="entry">
-			<h2>Write Valid Semantic Markup</h2>
+			<h3>Write Valid Semantic Markup</h3>
 			
 			<p>
 				Writing websites with clean, semantic HTML is something we wish we could always do. Sometimes we find ourselves limited by the way pages were setup by our predecessors, or sometimes we're coding an HTML email. The validity of the HTML should never be compromised, even if to solve a browser specific bug.
 			</p>
 			
 			<p>
-				Headings should be heirarchically created from <code>&lt;h1&gt;</code> onwards, paragraphs should always be in <code>&lt;p&gt;</code> tags and so on and so forth. If you write semantic HTML, the resultant page will be cleaner, lighter and easily parsed by search engine spiders. This is one of the simplest SEO fixes you can undertake.
+				Headings should be heirarchically created from <code>&lt;h2&gt;</code> onwards, paragraphs should always be in <code>&lt;p&gt;</code> tags and so on and so forth. If you write semantic HTML, the resultant page will be cleaner, lighter and easily parsed by search engine spiders. This is one of the simplest SEO fixes you can undertake.
 			</p>
 			
-			<h3>Which do you think looks cleaner, this?:</h3>
+			<h4>Which do you think looks cleaner, this?:</h4>
 			
 			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
 				<span class="sectionHeading">A Heading</span>
@@ -84,13 +84,11 @@
 				<br /> <br />
 			]]></script>
 			
-			<h3>Or this?</h3>
+			<h4>Or this?</h4>
 			
 			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
-				<h1>A Heading</h1>
-				<p>
-					Lorem ipsum dolor sit amet. ...
-				</p>
+				<h2>A Heading</h2>
+				<p>Lorem ipsum dolor sit amet. ...</p>
 			]]></script>
 		</div>
 		
@@ -100,7 +98,7 @@
 		
 		
 		<div id="accessibilityMicroformats" class="entry">
-			<h2>Use Microformats</h2>
+			<h3>Use Microformats</h3>
 			
 			<p>
 				Microformats are a way of making contact information machine readable. hCard classes (not vCard) are used to define the type of content contained within elements. These are then extracted or highlighted by the browser.
@@ -127,7 +125,7 @@
 		
 		
 		<div id="accessibilityAltText" class="entry">
-			<h2>Images Need &lsquo;Alt&rsquo; Text</h2>
+			<h3>Images Need &lsquo;Alt&rsquo; Text</h3>
 			
 			<p>
 				The <code>&lt;img&gt;</code> tag requires <code>alt</code> text to both validate and meet accessibility guidelines. The text in the <code>alt</code> attribute should be descriptive of what the image shows, or is trying to achieve, unless of course the image is not critical. 
@@ -153,7 +151,7 @@
 		
 		
 		<div id="accessibilityTables" class="entry">
-			<h2>Use Tables for Tabular Data Only</h2>
+			<h3>Use Tables for Tabular Data Only</h3>
 			
 			<p>
 				Tables should only ever be used for the presentation of tabular data. The only exception is when composing HTML email, in which a table is almost the only thing supported by soul crushing email clients.
@@ -189,7 +187,7 @@
 		
 		
 		<div id="accessibilityJqueryWidgets" class="entry">
-			<h2>Use jQuery &amp; jQuery UI Widgets</h2>
+			<h3>Use jQuery &amp; jQuery UI Widgets</h3>
 			
 			<p>
 				jQuery and jQuery UI are constructed to look and behave as close to identical as possible on different browsers. 
@@ -205,12 +203,12 @@
 		
 		
 
-		<h1 id="javascriptSection">JavaScript</h1>
+		<h2 id="javascriptSection">JavaScript</h2>
 		
 		
 		
 		<div id="javascriptWhitespace" class="entry">
-			<h2>Whitespacing &amp; Formatting</h2>
+			<h3>Whitespacing &amp; Formatting</h3>
 			
 			<p>
 				Any discussion about formatting, whitespacing and the placement of braces is going to be hotly debated. I guess the simplest rule is that, unless you're willing to completely format a whole document, <strong>respect and maintain the formatting of an existing document</strong>. 
@@ -222,7 +220,7 @@
 				<a href="http://docs.jquery.com/JQuery_Core_Style_Guidelines" target="_blank">Further Reading</a>
 			</p>
 			
-			<h3>Character Spacing</h3>
+			<h4>Character Spacing</h4>
 			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
 				// Bad
@@ -236,7 +234,7 @@
 				}
 			]]></script>
 			
-			<h3>Same Line Braces</h3>
+			<h4>Same Line Braces</h4>
 			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
 				// Bad
@@ -251,7 +249,7 @@
 				}
 			]]></script>
 			
-			<h3>Always Using Braces</h3>
+			<h4>Always Using Braces</h4>
 			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
 				// Bad
@@ -264,7 +262,7 @@
 				}
 			]]></script>
 			
-			<h3>String Handling</h3>
+			<h4>String Handling</h4>
 			<p>
 				<strong>Strings should always use double quotes</strong>. Some people are very fond of their C style strings (single quotes), but this leads to conflicting styles within a script.
 				C style string handling dictates that empty and single character strings should be wrapped in single quotations, while phrases and words should be wrapped in double quotations.
@@ -275,7 +273,7 @@
 		
 		
 		<div id="javascriptCommenting" class="entry">
-			<h2>Commenting</h2>
+			<h3>Commenting</h3>
 			
 			<p>
 				The requirement to comment code obsessively was pioneered by managers, team leaders and other people that interact with code infrequently. 
@@ -301,7 +299,7 @@
 				Commenting, in this scenario at least, is completely unnecessary.
 			</p>
 			
-			<h3>SITUATIONS WHERE COMMENTING IS IMPORTANT</h3>
+			<h4>SITUATIONS WHERE COMMENTING IS IMPORTANT</h4>
 			
 			<p>
 				Some parts of a project will never be easy to scan and understand. Consider a complicated regular expression, or a math function calculating angles or switching between degrees and radians.
@@ -320,7 +318,7 @@
 		
 		
 		<div id="javascriptComparison" class="entry">
-			<h2>Always Use === Comparison</h2>
+			<h3>Always Use === Comparison</h3>
 			
 			<p>
 				The use of the == equality operator allows for frustrating bugs to slip through almost undetected. It allows for weak typing that is best explained by <a href="http://bonsaiden.github.com/JavaScript-Garden/#types.equality" target="_blank">JavaScript Garden</a>.
@@ -339,7 +337,7 @@
 				
 			]]></script>
 			
-			<h3>The Exception</h3>
+			<h4>The Exception</h4>
 			<p>
 				Double equals comparison is allowed when comparing to null, because it will detect both null or undefined properties. If you don't fully understand this, I still suggest you use triple equals.
 			</p>
@@ -360,7 +358,7 @@
 		
 		
 		<div id="javascriptParseInt" class="entry">
-			<h2>Always Specify the Second &lsquo;radix&rsquo; Parameter When Using .parseInt()</h2>
+			<h3>Always Specify the Second &lsquo;radix&rsquo; Parameter When Using .parseInt()</h3>
 			
 			<p>
 				When parsing a string to an integer, it is considered good practice to specify the second 'radix' parameter - which determines to what base the string should be converted to. 
@@ -382,7 +380,7 @@
 		
 		
 		<div id="javascriptTrueFalse" class="entry">
-			<h2>Avoid Comparing to true and false</h2>
+			<h3>Avoid Comparing to true and false</h3>
 			
 			<p>
 				Direct comparison to the values of true and false is unnecessary. Sometimes it might be good for clarity, but it's just extra code.
@@ -411,7 +409,7 @@
 		
 		
 		<div id="javascriptGlobalNamespace" class="entry">
-			<h2>Avoid Polluting the Global Namespace</h2>
+			<h3>Avoid Polluting the Global Namespace</h3>
 			
 			<p>
 				An over-reliance on global variables is something all of us, myself especially, are guilty of. Arguments as to why globals are bad are fairly straight forward: the chance of script and variable conflicts is increased, 
@@ -468,7 +466,7 @@
 		
 		
 		<div id="javascriptCamelCase" class="entry">
-			<h2>Camel Case Variables</h2>
+			<h3>Camel Case Variables</h3>
 			
 			<p>
 				The camel casing (or <em>camelCasing</em>) of JavaScript variables is accepted as the standard in most coding environments.
@@ -492,7 +490,7 @@
 		
 		
 		<div id="javascriptMilliseconds" class="entry">
-			<h2>Readable Milliseconds</h2>
+			<h3>Readable Milliseconds</h3>
 			
 			<p>
 				A handy way of writing milliseconds in a readable format.
@@ -515,7 +513,7 @@
 		
 		
 		<div id="javascriptLoopCacheArrayLength" class="entry">
-			<h2>Loop Performance - Cache Array Length</h2>
+			<h3>Loop Performance - Cache Array Length</h3>
 			
 			<p>
 				Looping is arguably the most important part of JavaScript performance to get right. Shave a millisecond or two off inside of a loop, potentially gain seconds overall. One such way is to cache the length of an array so it doesnt have to be calculated every time the loop is iterated through.
@@ -533,7 +531,7 @@
 				}
 			]]></script>
 			
-			<h3>The Exception</h3>
+			<h4>The Exception</h4>
 			<p>
 				If you're looping through an array to find an remove a particular item, this will alter the array length. Any time you change the array length by either adding or removing items from inside the loop, you will get yourself into trouble. Consider either re-setting the length or avoid caching it for this particular situation
 			</p>
@@ -548,7 +546,7 @@
 		
 		
 		<div id="javascriptLoopBreakContinue" class="entry">
-			<h2>Loop Performance - Use &lsquo;break;&rsquo; &amp; &lsquo;continue;&rsquo;</h2>
+			<h3>Loop Performance - Use &lsquo;break;&rsquo; &amp; &lsquo;continue;&rsquo;</h3>
 			
 			<p>
 				The ability to step over and out of loops is really useful in avoiding costly loop cycles.
@@ -592,7 +590,7 @@
 		
 		
 		<div id="javascriptFunctionParameters" class="entry">
-			<h2>Don't Send Too Many Function Parameters</h2>
+			<h3>Don't Send Too Many Function Parameters</h3>
 			
 			<p>
 				This is a pretty bad idea, more for readability than anything:
@@ -627,7 +625,7 @@
 		
 		
 		<div id="javascriptRemapThis" class="entry">
-			<h2>Remap &lsquo;this&rsquo; to &lsquo;self&rsquo;</h2>
+			<h3>Remap &lsquo;this&rsquo; to &lsquo;self&rsquo;</h3>
 			
 			<p>
 				When writing object-oriented (OO) JavaScript, the scope of <code>this</code> must be understood. Regardless of what design pattern you choose to structure your pseudo-classes, a reference to <code>this</code> is generally the
@@ -693,7 +691,7 @@
 		
 		
 		<div id="javascriptBooleanNaming" class="entry">
-			<h2>CanIHaz Boolean?</h2>
+			<h3>CanIHaz Boolean?</h3>
 			
 			<p>
 				Booleans should be named with the prefixes of <code>is</code>, <code>can</code> or <code>has</code>.
@@ -718,7 +716,7 @@
 		
 		
 		<div id="javascriptFeatureSniff" class="entry">
-			<h2>Feature Sniff, Don't Browser Sniff</h2>
+			<h3>Feature Sniff, Don't Browser Sniff</h3>
 			
 			<p>
 				Does the client's browser support geolocation? Does the client's browser support web workers? HTML5 video? HTML5 audio? The answer used to be:
@@ -771,7 +769,7 @@
 		
 		
 
-		<h1 id="jquerySection">jQuery Specific</h1>
+		<h2 id="jquerySection">jQuery Specific</h2>
 		
 		
 		
@@ -780,7 +778,7 @@
 		
 		
 		<div id="jqueryChain" class="entry">
-			<h2>Chain Like a Sick Bitch</h2>
+			<h3>Chain Like a Sick Bitch</h3>
 			
 			<p>
 				One of the best parts of jQuery is its function chaining. You've probably used it a bit, maybe a few simple calls... but have you ever traversed the DOM like a sick bitch? Take some time to familiarise yourself with the <a href="http://api.jquery.com/end/" target="_blank">.end()</a> function. It is critical for when you begin stepping up and down the DOM tree from your original selector.
@@ -808,7 +806,7 @@
 		
 		
 		<div id="jqueryStop" class="entry">
-			<h2>&lsquo;.stop()&rsquo; Collaborate &amp; Listen</h2>
+			<h3>&lsquo;.stop()&rsquo; Collaborate &amp; Listen</h3>
 			
 			<p>
 				Binding jQuery animations to mouse events is a key part of modern web-based user interaction. It's also something that you see done poorly on even the most famous of web sites. 
@@ -847,14 +845,14 @@
 		
 		
 		<div id="jqueryOptimiseSelectors" class="entry">
-			<h2>Optimise Your Selectors</h2>
+			<h3>Optimise Your Selectors</h3>
 			
 			<p>
 				jQuery is pretty chill. It can do pretty much everything but make you coffee, and I hear that's in the roadmap for 2.0. One thing you have to be careful about is abusing the power that is the <a href="http://sizzlejs.com/" target="_blank">sizzleJS</a> selector engine.
 				There are two strategies to overcome this: <em>caching the selector results</em> and <em>using efficient selectors</em>.
 			</p>
 			
-			<h3>Caching Selector Results</h3>
+			<h4>Caching Selector Results</h4>
 			
 			<p>
 				Do a costly DOM query every time you want to change something, or store a reference to the element? Pretty clear choice.
@@ -891,7 +889,7 @@
 			
 			<br />
 			
-			<h3>Using Efficient Selectors</h3>
+			<h4>Using Efficient Selectors</h4>
 			
 			<p>
 				So jQuery/sizzleJS can use CSS3 selectors like a boss, but what's the real cost? Behind the scenes the browser is hopefully using <code>document.querySelector()</code>, but there's also a fair chance it will be breaking down your selector string and querying the DOM manually.
@@ -914,7 +912,7 @@
 		
 		
 		<div id="jqueryForEachLoops" class="entry">
-			<h2>A &lsquo;for&rsquo; Loop is Always Quicker Than a &lsquo;each()&rsquo; Loop</h2>
+			<h3>A &lsquo;for&rsquo; Loop is Always Quicker Than a &lsquo;each()&rsquo; Loop</h3>
 			
 			<p>
 				No matter what happens in the next few years of browser development, a native <code>for</code> loop will always be quicker than a jQuery <code>$.each()</code> loop. 
@@ -950,7 +948,7 @@
 		
 	
 
-		<h1 id="cssSection">CSS</h1>
+		<h2 id="cssSection">CSS</h2>
 		
 		
 		
@@ -959,72 +957,58 @@
 		
 		
 		<div id="cssWhitespacing" class="entry">
-			<h2>Whitespacing</h2>
+			<h3>Whitespacing</h3>
 			
 			<p>
 				Whitespacing of CSS can be difficult as we chop and change between single and multi line CSS arguments. I'm not going to get into that.
 			</p>
 			
-			<h3>Proper Spacing</h3>
+			<h4>Proper Spacing and Bracketing</h4>
 			
 			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				/* BAD */
-				.selector {display:none;background:#ff0000;color:#000;} 
-				
-				/* GOOD - SINGLE LINE */
-				.selector {display: none; background: #ff0000; color: #000;} 
-				
-				/* GOOD - MULTI-LINE */
+				/* GOOD */
 				.selector {
 					display: none;
 					background: #ff0000;
 					color: #000;
 					} 
+
+				/* BAD */
+				.selector {
+					display:none;
+					background:#ff0000;
+					color:#000;
+				} 
+
+				/* GOOD - Use a single line for single attributes: */
+				.selector {display: none;}
 			]]></script>
 			
-			<h3>Brackets</h3>
+			<h4>Indenting Child Elements</h4>
+			
+			<p>
+				Purely optional, use when it adds legibility.
+			</p>
 			
 			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				/* Like this: */
 				.selector {
 					display: none;
 					background: #ff0000;
 					color: #000;
 					}
-				
-				/* NOT Like this: */
-				.selector {
-					display: none;
-					background: #ff0000;
-					color: #000;
-				}
-				/* Use a single line for single attributes: */
-				.selector {display: none;}
-
-				
+					.selector a {text-decoration: none;}
+					.selector span {font-weight: bold;}
 			]]></script>
 			
-			<h3>Indenting Child Elements</h3>
-			
-			<p>
-				Purely optional, and personally only employed when in a document with single line declarations.
-			</p>
-			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				.selector { display: none; background: #ff0000; color: #000; }
-					.selector a { text-decoration: none; }
-					.selector span { font-weight: bold; }
-			]]></script>
-			
-			<h3>Grouping &amp; Indenting Vendor Prefixes</h3>
-			
+			<h4>Proper Vendor Prefixes</h4>
+			<p>Always end with the non-vendor specific declaration. Use ALL prefixes where applicable</p>
 			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
 				.selector { 
-					background: #FFF; border: 1px solid #000; color: #EAEAEA;
-						-webkit-border-radius: 3px;
-						-moz-border-radius: 3px;
-						border-radius: 3px;
-				}
+					-webkit-border-radius: 4px;
+					-moz-border-radius: 4px;
+					-o-border-radius: 4px;
+					border-radius: 4px; 
+					}
 			]]></script>
 			
 		</div>
@@ -1036,9 +1020,9 @@
 		
 		
 		<div id="cssShorthand" class="entry">
-			<h2>CSS Shorthand</h2>
+			<h3>CSS Shorthand</h3>
 			
-			<h3>Grouping Properties</h3>
+			<h4>Grouping Properties</h4>
 			
 			<p>
 				Grouping properties together is one of the single most effective methods to greatly reduce the size of a CSS file. It's important to understand how properties are ordered (clockwise - top, right, bottom, left) 
@@ -1059,7 +1043,7 @@
 					padding: 1px 2px;
 			]]></script>
 			
-			<h3>From 0px to Hero</h3>
+			<h4>From 0px to Hero</h4>
 			
 			<p>
 				Assigning a unit type to a property value of zero is redundant. It is not important to know whether an element should be <code>0px</code> from the left or <code>0 elephants</code> from the left, just that it's bang on the left.
@@ -1084,7 +1068,7 @@
 		
 		
 		<div id="cssCommenting" class="entry">
-			<h2>Commenting Blocks</h2>
+			<h3>Commenting Blocks</h3>
 			
 			<p>
 				Commenting large blocks of CSS is a great way of keeping track of multiple style areas within the one stylesheet. 
@@ -1118,14 +1102,14 @@
 		
 		
 		<div id="cssClearingFloats" class="entry">
-			<h2>Clearing Floats</h2>
+			<h3>Clearing Floats</h3>
 			
 			<p>
 				Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element (it doesn't work if it is "auto") and an overflow value of either auto or hidden. 
 				"Hidden" obviously degrades better, but there are some IE compatibility versions where auto works better.
 			</p>
 			
-			<h3>The HTML:</h3>
+			<h4>The HTML:</h4>
 			
 			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
 				
@@ -1138,7 +1122,7 @@
 				
 			]]></script>
 			
-			<h3>The CSS:</h3>
+			<h4>The CSS:</h4>
 			
 			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
 				.parentElement {
@@ -1169,7 +1153,7 @@
 		
 		
 		<div id="cssCentering" class="entry">
-			<h2>Vertical &amp; Horizontal Centering</h2>
+			<h3>Vertical &amp; Horizontal Centering</h3>
 			
 			<p>
 				Centering elements horizontally is not exactly rocket science, and I'm sure most of you are familiar with the following snippet:
@@ -1223,7 +1207,7 @@
 		
 		
 		<div id="cssFeatureSniff" class="entry">
-			<h2>Feature Sniff, Don't Browser Sniff</h2>
+			<h3>Feature Sniff, Don't Browser Sniff</h3>
 			
 			<p>
 				In the earlier discusison of JavaScript feature detection, applying properties if a browser is <em>any version</em> of IE is increasingly problematic.
@@ -1253,7 +1237,7 @@
 		
 		
 		<div id="cssImportant" class="entry">
-			<h2>You're Not !important</h2>
+			<h3>You're Not !important</h3>
 			
 			<p>
 				A reliance upon the <code>!important</code> tag is a dangerous thing. The cases that warrant its use are rare and specific. They revolve around the necessity to override another stylesheet which you do not have access or permission to edit.
@@ -1283,7 +1267,7 @@
 		
 		
 		<div id="cssDegradation" class="entry">
-			<h2>Aggressive Degradation</h2>
+			<h3>Aggressive Degradation</h3>
 			
 			<p>
 				It's worth noting that this is a personal opinion, and best suited to very specific situations. The stance of aggressive degradation will not be well received in large commercial projects or enterprise solutions relying upon older browsers.
@@ -1316,7 +1300,7 @@
 		
 		
 
-		<h1 id="cssHtmlSection">CSS3 &amp; HTML5</h1>
+		<h2 id="cssHtmlSection">CSS3 &amp; HTML5</h2>
 		
 		
 		
@@ -1325,7 +1309,7 @@
 		
 		
 		<div id="cssHtmlFeatureSniff" class="entry">
-			<h2>Feature Sniff with Modernizr</h2>
+			<h3>Feature Sniff with Modernizr</h3>
 			
 			<p>
 				I think I've gone on enough about this already. Use <a href="http://www.modernizr.com" target="_blank">Modernizr</a> to detect the availability of specific HTML5 and CSS3 features.
@@ -1340,7 +1324,7 @@
 		
 		
 		<div id="cssHtmlFontFace" class="entry">
-			<h2>@font-face Use and Abuse</h2>
+			<h3>@font-face Use and Abuse</h3>
 			
 			<p>
 				Before you consider embedding a custom font, is important that you inspect the <abbr>EULA</abbr> and check if web embedding is allowed. Foundries are understandably reluctant to allow designers and developers
@@ -1361,7 +1345,7 @@
 		
 		
 		<div id="cssHtmlDegradation" class="entry">
-			<h2>Degradation</h2>
+			<h3>Degradation</h3>
 			
 			<p>
 				Thankfully browser handling of unsupported HTML5 and CSS3 is already that of a graceful nature. New additions to the list of <code>&lt;input /&gt;</code> types such as "email", "search" etc. will generally
@@ -1387,7 +1371,7 @@
 		
 		
 
-		<h1 id="resourcesSection">Resources</h1>
+		<h2 id="resourcesSection">Resources</h2>
 		
 		
 		
@@ -1396,7 +1380,7 @@
 		
 		
 		<div id="resourcesSupport" class="entry">
-			<h2>Support and Suggestions</h2>
+			<h3>Support and Suggestions</h3>
 			
 			<p>
 				The following resources are vital for the standardisation of code and interaction in a modern web page. They ensure that CSS3 and HTML5 features are made accessible across a range of browsers that previously lacked support.
@@ -1454,7 +1438,7 @@
 		
 		
 		<div id="resourcesSuggestions" class="entry">
-			<h2>Support and Suggestions</h2>
+			<h3>Support and Suggestions</h3>
 			
 			<p>
 				This document was prepared by Tait Brown (<a href="http://www.twitter.com/taitems" target="_blank">@taitems</a>).

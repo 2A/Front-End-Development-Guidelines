@@ -18,25 +18,25 @@ body {
 
 
 h1, h2, h3, h4, h5 {
-	font-family: 'TodaySHOP-BoldRegular';
+	font-family: 'Helvetica Neue', 'TodaySHOP-BoldRegular';
 	color: #23262d;
 	text-shadow: 0 1px 0 rgba(255,255,255,0.01);
 	position: relative;
 }
 
-h1 {
+h2 {
 	margin: 0;
 	padding: 1em 0;
 	font-size: 3em;
 }
 
-h2 {
+h3 {
 	padding-bottom: 4px;
 	border-bottom: 2px solid #23262d;
 	font-size: 1.7em;
 }
 
-h3 {
+h4 {
 	text-transform: uppercase;
 	font-size: 1em;
 	margin: 1.2em 0;
@@ -88,7 +88,7 @@ p code {
 	opacity: 0.75;
 	filter: alpha(opacity=10);
 }
-h1 .deepLink {
+h2 .deepLink {
 	background: url(../images/link_32.png);
 	width: 32px;
 	height: 32px;
@@ -127,7 +127,7 @@ h2 .deepLink {
 #toc a:hover {
 	color: #e5ecf5;
 }
-#toc h1 {
+#toc h2 {
 	margin-top: 1.6em;
 	font-size: 1.5em;
 	color: #f5faff;

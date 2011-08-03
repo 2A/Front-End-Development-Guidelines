@@ -3,7 +3,7 @@ $(function() {
 	var tocWrapper = $("#toc .wrapper");
 	
 	$("#mainContainer")
-		.find("h1").each(function(i,item) {
+		.find("h2").each(function(i,item) {
 			$(item).append("<a class='deepLink' href='#" + item.id + "'></a>");	
 			$("<a />")
 				.text( $(item).text() )
@@ -11,7 +11,7 @@ $(function() {
 				.data("scrollTo",item)
 				.appendTo(tocWrapper);
 		}).end()
-		.find("h2").each(function(i,item) {
+		.find("h3").each(function(i,item) {
 			$(item).append("<a class='deepLink' href='#" + item.parentNode.id + "'></a>");	
 		});
 	
