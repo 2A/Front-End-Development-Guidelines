@@ -239,7 +239,7 @@
 			]]></script>
 			
 			<h4>Use Proper Vendor Prefixes</h4>
-			<p>Always end with the non-vendor specific declaration. Use ALL prefixes where applicable.</p>
+			<p>Use ALL prefixes where applicable. Always end with the non-vendor specific declaration.</p>
 			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
 				.selector { 
 					-webkit-border-radius: 4px;
@@ -260,42 +260,29 @@
 		<div id="cssShorthand" class="entry">
 			<h3>CSS Shorthand</h3>
 			
-			<h4>Grouping Properties</h4>
-			
-			<p>
-				Grouping properties together is one of the single most effective methods to greatly reduce the size of a CSS file. It's important to understand how properties are ordered (clockwise - top, right, bottom, left) 
-				and how they can be further shortened (top and bottom, left and right).
-			</p>
-			
 			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-					/* LONG CODE IS LONG */
-					padding-top: 1px;
+					/* USE THIS */
+					padding: 0 2px;
+
+					/* NOT THIS */
+					padding-top: 0px;
 					padding-right: 2px;
-					padding-bottom: 1px;
+					padding-bottom: 0px;
 					padding-left: 2px;
-					
-					/* BETTER */
-					padding: 1px 2px 1px 2px;
-					
-					/* BEST */
-					padding: 1px 2px;
+
 			]]></script>
-			
-			<h4>From 0px to Hero</h4>
-			
-			<p>
-				Assigning a unit type to a property value of zero is redundant. It is not important to know whether an element should be <code>0px</code> from the left or <code>0 elephants</code> from the left, just that it's bang on the left.
-			</p>
-			
+			<p>Know your Short hand</p>
 			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-					/* BAD */
-					padding: 0px 10px;
+					/* USE THIS */
+					background-color: #fff;
+
+					/* NOT THIS */
+					background: #fff;
+
 			]]></script>
 			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-					/* GOOD */
-					padding: 0 10px;
-			]]></script>
+			<p>In this example, if you use the shorthand version, certain default attributes will be applied. Keep it simple and stick with long-hand unless you're declaring ALL attributes.</p>
+			
 			
 		</div>
 		
@@ -305,7 +292,7 @@
 		
 		
 		
-		<div id="cssCommenting" class="entry">
+		<!-- div id="cssCommenting" class="entry">
 			<h3>Commenting Blocks</h3>
 			
 			<p>
@@ -327,7 +314,7 @@
 					#carousel .buttons { position: absolute; right: 10px; bottom: 10px; }
 			]]></script>
 			
-		</div>
+		</div -->
 
 		
 		
@@ -342,20 +329,13 @@
 		<div id="cssClearingFloats" class="entry">
 			<h3>Clearing Floats</h3>
 			
-			<p>
-				Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element (it doesn't work if it is "auto") and an overflow value of either auto or hidden. 
-				"Hidden" obviously degrades better, but there are some IE compatibility versions where auto works better.
-			</p>
-			
 			<h4>The HTML:</h4>
 			
 			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
 				
-				<div class="parentElement">
-					<div class="childElement">
-						I'm floated left!
-					</div>
-					I'm normal text that wraps around the float
+				<div class="parent">
+					<div class="child">I'm floated left!</div>
+					<div class="child">I'm also floated left!</div>
 				</div>
 				
 			]]></script>
@@ -363,21 +343,11 @@
 			<h4>The CSS:</h4>
 			
 			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				.parentElement {
-					width: 100%;
-					overflow: hidden;
-				}
-				.childElement {
-					float: left;
-				}
+				.parent {overflow: auto;}
+				.child {float: left;}
 			]]></script>
 			
-			<p>
-				Contributors have also brough the latest clearfix to my attention. The <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">micro clear-fix</a>
-				is considered stable and cross browser compliant enough to make it to the latest HTML5 boiler plate release. I <strong>highly</strong> recommend you check it out. 
-				Although I am not a massive fan of browser-specific CSS and pseudo elements such as <code>:after</code>, the micro clearfix is definitely more robust. 
-				It also prevents top margins from collapsing which is an absolute life saver.
-			</p>
+			<p>That's all there is to it. <a href="http://jsfiddle.net/billkeller/jPuM9/1/">JSFiddle sample of clearing a float</a></p>
 			
 		</div>
 		
@@ -390,7 +360,7 @@
 		
 		
 		
-		<div id="cssCentering" class="entry">
+		<!-- div id="cssCentering" class="entry">
 			<h3>Vertical &amp; Horizontal Centering</h3>
 			
 			<p>
@@ -436,7 +406,7 @@
 				}
 			]]></script>
 			
-		</div>
+		</div -->
 		
 		
 		
@@ -444,7 +414,7 @@
 		
 		
 		
-		<div id="cssFeatureSniff" class="entry">
+		<!-- div id="cssFeatureSniff" class="entry">
 			<h3>Feature Sniff, Don't Browser Sniff</h3>
 			
 			<p>
@@ -466,7 +436,7 @@
 				}
 			]]></script>
 			
-		</div>
+		</div -->
 		
 		
 		
@@ -474,7 +444,7 @@
 		
 		
 		
-		<div id="cssImportant" class="entry">
+		<!-- div id="cssImportant" class="entry">
 			<h3>You're Not !important</h3>
 			
 			<p>
@@ -496,7 +466,7 @@
 				<a href="http://www.vanseodesign.com/css/css-specificity-inheritance-cascaade/" target="_blank">Their article</a> on style precedence does a better job explaining inheritence than I ever could, so please give it a go.
 			</p>
 			
-		</div>
+		</div -->
 		
 		
 		
@@ -504,7 +474,7 @@
 		
 		
 		
-		<div id="cssDegradation" class="entry">
+		<!-- div id="cssDegradation" class="entry">
 			<h3>Aggressive Degradation</h3>
 			
 			<p>
@@ -526,7 +496,7 @@
 				While not ideal for every situation, it ensures the timely delivery of projects and that the root product is still usable and not reliant on (validation breaking) hacks.
 			</p>
 			
-		</div>
+		</div -->
 		
 		
 		
@@ -536,7 +506,7 @@
 		
 		
 		
-		
+		<!--
 
 		<h2 id="cssHtmlSection">CSS3 &amp; HTML5</h2>
 		
@@ -603,7 +573,7 @@
 			
 		</div>
 		
-		
+		-->
 		
 
 
