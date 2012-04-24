@@ -47,6 +47,7 @@
 			<p>
 				Use the HTML5 DOCTYPE. It's supported in all modern browsers, and throws IE6 and IE7 into standards mode. <a href="http://ejohn.org/blog/html5-doctype/" target="_blank">Source</a>.
 			</p>
+			<p>Better yet, use <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>, if only for the HTML5 graceful degradation.</p>
 			
 			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
 				<!DOCTYPE html>
@@ -204,14 +205,14 @@
 				/* GOOD */
 				.selector {
 					display: none;
-					background: #ff0000;
+					background-color: #ff0000;
 					color: #000;
 					} 
 
 				/* BAD */
 				.selector {
 					display:none;
-					background:#ff0000;
+					background-color:#ff0000;
 					color:#000;
 				}
 				
@@ -225,13 +226,13 @@
 			<h4>Indenting Child Elements</h4>
 			
 			<p>
-				Purely optional, use when it adds legibility.
+				Use when it adds legibility. No need to go crazy.
 			</p>
 			
 			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
 				.selector {
 					display: none;
-					background: #ff0000;
+					background-color: #ff0000;
 					color: #000;
 					}
 					.selector a {text-decoration: none;}
@@ -281,7 +282,7 @@
 
 			]]></script>
 			
-			<p>In this example, if you use the shorthand version, certain default attributes will be applied. Keep it simple and stick with long-hand unless you're declaring ALL attributes.</p>
+			<p>In this example, if you use the 'background' intending to change only the background-color, you're accidentally applying additional default 'background' attributes. Keep it simple and stick with long-hand unless you're declaring ALL attributes.</p>
 			
 			
 		</div>
