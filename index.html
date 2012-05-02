@@ -33,171 +33,10 @@
 	</div>
 
 	<div id="mainContainer">
-
-		<h2 id="accessiblitySection">HTML</h2>
-		
-		
-		
-		<div id="accessibilityDoctype" class="entry">
-			<h3>DOCTYPE</h3>
-			
-			<p>
-				The absence of a DOCTYPE is a crime punishable by death.
-			</p>
-			<p>
-				Use the HTML5 DOCTYPE. It's supported in all modern browsers, and throws IE6 and IE7 into standards mode. <a href="http://ejohn.org/blog/html5-doctype/" target="_blank">Source</a>.
-			</p>
-			<p>Better yet, use <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>, if only for the HTML5 graceful degradation.</p>
-			
-			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
-				<!DOCTYPE html>
-			]]></script>
-			
-			<p>If the project can't use HTML5, use XHTML 1.0 Strict:</p>
-			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
-				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-			</script>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		<div id="accessibilitySemanticMarkup" class="entry">
-			<h3>Write Valid Semantic Markup</h3>
-			
-			<p>
-				Writing websites with clean, semantic HTML is something we wish we could always do. Sometimes we find ourselves limited by the way pages were setup by our predecessors, or sometimes we're coding an HTML email. The <strong>validity of the HTML should never be compromised</strong>, even if to solve a browser specific bug. <a href="http://validator.w3.org/">Validate your HTML</a> early and often.
-			</p>
-
-			<p>You may only have a single <code>&lt;h1&gt;</code> per page. Reserve it for the logo, and use it as a link to the homepage, with image replaced text.</p>
-			<p>
-				Headings should be hierarchically created from <code>&lt;h2&gt;</code> onwards, paragraphs should always be in <code>&lt;p&gt;</code> tags and so on and so forth. If you write semantic HTML, the resultant page will be cleaner, lighter and easily parsed by search engine spiders. This is one of the simplest SEO fixes you can undertake.
-			</p>
-			
-			<h4>Use this:</h4>
-			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
-				<h2>A Heading</h2>
-				<p>Lorem ipsum dolor sit amet. ...</p>
-			]]></script>
-			
-			<h4>NOT this:</h4>
-			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
-				<span class="sectionHeading">A Heading</span>
-				<br /> <br />
-				Lorem ipsum dolor sit amet. ...
-				<br /> <br />
-			]]></script>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		<div id="accessibilityMicroformats" class="entry">
-			<h3>Use Microformats</h3>
-			
-			<p>
-				Microformats are a way of making contact information machine readable. hCard classes (not vCard) are used to define the type of content contained within elements. These are then extracted or highlighted by the browser.
-			</p>
-			
-			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
-				<span class="tel">
-					<span class="type">home</span>:
-					<span class="value">+1.415.555.1212</span>
-				</span>
-			]]></script>
-			
-			<p>
-				If you were to navigate to a page that uses this, you would notice that a program like Skype will easily detect what numbers on the page are phone numbers. Mobile Safari does something similar on iOS devices.
-			</p>
-			
-			<p>
-				For more information: <a href="http://microformats.org/wiki/hcard" target="_blank">http://microformats.org/wiki/hcard</a>
-			</p>
-		</div>
-		
-		
-		
-		
-		
-		<div id="accessibilityAltText" class="entry">
-			<h3>Images Need &lsquo;Alt&rsquo; Text</h3>
-			
-			<p>
-				The <code>&lt;img&gt;</code> tag requires <code>alt</code> text to both validate and meet accessibility guidelines. The text in the <code>alt</code> attribute should be descriptive of what the image shows, or is trying to achieve, unless of course the image is not critical. 
-			</p>
-			<p>
-				If the image is of a list bullet or other trivial icons, it is recommended to simply leave the <code>alt</code> attribute empty, but still present. A screenreader will then ignore it, as opposed to having to read out "bullet" 20 times.
-			</p>
-			
-			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
-				<img src="dog.gif" alt="Fido and I at the park!" /> 
-				<!-- good, descriptive -->
-			
-				<img src="bullet.gif" alt="bullet" />
-				<!-- bad, as silly as it seems -->
-				
-				<img src="bullet.gif" alt="" />
-				<!-- good -->
-			]]></script>
-		</div>
-		
-		
-		
-		
-		
-		<div id="accessibilityTables" class="entry">
-			<h3>Use Tables for Tabular Data Only</h3>
-			
-			<p>
-				Tables should only be used for the presentation of tabular data. The only exception is when composing HTML email, in which a table is almost the only thing supported by soul crushing email clients.
-			</p>
-			<p>
-				For accessibility, table headers should always be presented using <code>&lt;th&gt;</code> elements. 
-				Set <code>cellpadding</code>, <code>cellspacing</code> and <code>border</code> values to <code>0</code> as these are more consistently controlled by CSS.
-			</p>
-			
-			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
-				<table cellpadding="0" cellspacing="0" border="0">
-					<thead>
-						<tr>
-							<th>
-								Cell Header
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								Cell Item
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			]]></script>
-			
-			<p>If the data is tabular, use a <code>&lt;table&gt;</code>. <a href="http://csswizardry.com/quick-tips/#tip-25">Do not reinvent the wheel</a>.</p>
-		</div>
-		
-	
 	
 		<h2 id="cssSection">CSS</h2>
-		
-		
-		
-		
-		
-		
-		
 		<div id="cssWhitespacing" class="entry">
 			<h3>Whitespacing</h3>
-			
-			<p>Only use single-line CSS when you have a single attribute.</p>
 			
 			<h4>Proper Spacing and Bracketing</h4>
 			
@@ -249,6 +88,21 @@
 					border-radius: 4px; 
 					}
 			]]></script>
+
+			<h4>Account for all your link psuedo-classes.</h4>
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+				a,
+				a:link,
+				a:visited { 
+					text-decoration: none;
+					}
+				a:hover,
+				a:active,
+				a:focus { 
+					text-decoration: underline;
+					}
+
+			]]></script>
 			
 		</div>
 		
@@ -282,7 +136,66 @@
 
 			]]></script>
 			
-			<p>In this example, if you use the 'background' intending to change only the background-color, you're accidentally applying additional default 'background' attributes. Keep it simple and stick with long-hand unless you're declaring ALL attributes.</p>
+			<p>In this example, if you use 'background' intending to change only the background-color, you're accidentally applying additional, default, attributes. Keep long-hand unless you're declaring ALL attributes.</p>
+			
+			
+		</div>
+
+		<div id="cssGenerallySpeaking" class="entry">
+			<h3>CSS Generally Speaking</h3>
+			<p>Abstract as much as possible. For example, here's shared styles abstracted into a single, shared selector. Preferably, apply only box-related styles to this high-level selector.</p>
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+			nav[class^=nav-] {
+				list-style: none outside;
+				padding: 0;
+				margin: 0;
+				}
+				.nav_primary {
+					color: #fff;
+					margin-top: 26px;
+					}
+				.nav_footer {
+					color: #000;
+					margin-top: 40px;
+					}
+			
+			<nav role="navigation">
+				<ul class="nav-primary">
+					<li>item</li>
+					<li>item</li>
+				</ul>
+			</nav>
+
+			<nav role="navigation">
+				<ul class="nav-footer">
+					<li>item</li>
+					<li>item</li>
+				</ul>
+			</nav>
+
+			]]></script>
+			<p>Additional samples: <a href="http://jsfiddle.net/billkeller/cxYKq/5/">http://jsfiddle.net/billkeller/cxYKq/5/</a></p>
+			<p>Also read:</p>
+			<ul>
+				<li><a href="http://msdn.microsoft.com/en-us/magazine/gg619394.aspx">http://msdn.microsoft.com/en-us/magazine/gg619394.aspx</a></li>
+				<li><a href="https://github.com/csswizardry/CSS-Guidelines/blob/master/CSS%20Guidelines.md">csswizardry / CSS-Guildelines</a>. We like these guidelines.</li>
+				<li>And for our Kohana deployments, implement <a href="https://github.com/2A/minify-kohana">minify-kohana</a></li>
+			</ul>
+				
+			<!-- mention 'extending your classess... .item.item-v2 -->
+			
+			<!--
+			Prefix naming conventions for image files, such as “portrait-”
+			
+			- icon- or path based
+			
+			provide fallbacks:
+			
+			background-color: #000;
+			background-color: rgba(0,0,0,.8);
+	
+			
+			-->
 			
 			
 		</div>
@@ -576,7 +489,148 @@
 		
 		-->
 		
+		<h2 id="accessiblitySection">HTML</h2>
+		
+		
+		
+		<div id="accessibilityDoctype" class="entry">
+			<h3>DOCTYPE</h3>
+			<p>Use the HTML5 DOCTYPE. It's supported in all modern browsers, and throws IE6 and IE7 into standards mode. <a href="http://ejohn.org/blog/html5-doctype/" target="_blank">Source</a>.</p>
+			<p>Better yet, use <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>, if only for the HTML5 graceful degradation.</p>
+			
+			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
+				<!DOCTYPE html>
+			]]></script>
+			
+			<p>If the project can't use HTML5, use XHTML 1.0 Strict:</p>
+			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
+				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+			</script>
+		</div>
+		
+		
+		
+		
+		
+		<div id="accessibilitySemanticMarkup" class="entry">
+			<h3>Write Valid Semantic Markup</h3>
+			
+			<p>
+				Writing websites with clean, semantic HTML is something we wish we could always do. Sometimes we find ourselves limited by the way pages were setup by our predecessors, or sometimes we're coding an HTML email. The <strong>validity of the HTML should never be compromised</strong>, even if to solve a browser specific bug. <a href="http://validator.w3.org/">Validate your HTML</a> early and often.
+			</p>
 
+			<p>You may only have a single <code>&lt;h1&gt;</code> per page. Reserve it for the logo, and use it as a link to the homepage, with image replaced text.</p>
+			<p>
+				Headings should be hierarchically created from <code>&lt;h2&gt;</code> onwards, paragraphs should always be in <code>&lt;p&gt;</code> tags and so on and so forth. If you write semantic HTML, the resultant page will be cleaner, lighter and easily parsed by search engine spiders. This is one of the simplest SEO fixes you can undertake.
+			</p>
+			
+			<h4>Use this:</h4>
+			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
+				<h2>A Heading</h2>
+				<p>Lorem ipsum dolor sit amet. ...</p>
+			]]></script>
+			
+			<h4>NOT this:</h4>
+			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
+				<span class="sectionHeading">A Heading</span>
+				<br /> <br />
+				Lorem ipsum dolor sit amet. ...
+				<br /> <br />
+			]]></script>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		<div id="accessibilityMicroformats" class="entry">
+			<h3>Use Microformats</h3>
+			
+			<p>
+				Microformats are a way of making contact information machine readable. hCard classes (not vCard) are used to define the type of content contained within elements. These are then extracted or highlighted by the browser.
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
+				<span class="tel">
+					<span class="type">home</span>:
+					<span class="value">+1.415.555.1212</span>
+				</span>
+			]]></script>
+			
+			<p>
+				If you were to navigate to a page that uses this, you would notice that a program like Skype will easily detect what numbers on the page are phone numbers. Mobile Safari does something similar on iOS devices.
+			</p>
+			
+			<p>
+				For more information: <a href="http://microformats.org/wiki/hcard" target="_blank">http://microformats.org/wiki/hcard</a>
+			</p>
+		</div>
+		
+		
+		
+		
+		
+		<div id="accessibilityAltText" class="entry">
+			<h3>Images Need &lsquo;Alt&rsquo; Text</h3>
+			
+			<p>
+				The <code>&lt;img&gt;</code> tag requires <code>alt</code> text to both validate and meet accessibility guidelines. The text in the <code>alt</code> attribute should be descriptive of what the image shows, or is trying to achieve, unless of course the image is not critical. 
+			</p>
+			<p>
+				If the image is of a list bullet or other trivial icons, it is recommended to simply leave the <code>alt</code> attribute empty, but still present. A screenreader will then ignore it, as opposed to having to read out "bullet" 20 times.
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
+				<img src="dog.gif" alt="Fido and I at the park!" /> 
+				<!-- good, descriptive -->
+			
+				<img src="bullet.gif" alt="bullet" />
+				<!-- bad, as silly as it seems -->
+				
+				<img src="bullet.gif" alt="" />
+				<!-- good -->
+			]]></script>
+		</div>
+		
+		
+		
+		
+		
+		<div id="accessibilityTables" class="entry">
+			<h3>Use Tables for Tabular Data Only</h3>
+			
+			<p>
+				Tables should only be used for the presentation of tabular data. The only exception is when composing HTML email, in which a table is almost the only thing supported by soul crushing email clients.
+			</p>
+			<p>
+				For accessibility, table headers should always be presented using <code>&lt;th&gt;</code> elements. 
+				Set <code>cellpadding</code>, <code>cellspacing</code> and <code>border</code> values to <code>0</code> as these are more consistently controlled by CSS.
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
+				<table cellpadding="0" cellspacing="0" border="0">
+					<thead>
+						<tr>
+							<th>
+								Cell Header
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								Cell Item
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			]]></script>
+			
+			<p>If the data is tabular, use a <code>&lt;table&gt;</code>. <a href="http://csswizardry.com/quick-tips/#tip-25">Do not reinvent the wheel</a>.</p>
+		</div>
+		
 
 
 
